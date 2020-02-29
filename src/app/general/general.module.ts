@@ -10,9 +10,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 @NgModule({
-  declarations: [HomeComponent, DireccionesComponent, MisionComponent, VisionComponent, ContactoComponent, PageNotFoundComponent],
+  declarations: [HomeComponent, DireccionesComponent, MisionComponent, VisionComponent, ContactoComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    HomeComponent, DireccionesComponent, ContactoComponent, PageNotFoundComponent
   ]
 })
 export class GeneralModule { }
