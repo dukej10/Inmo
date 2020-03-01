@@ -26,6 +26,11 @@ const routes: Routes = [
     path: 'dir',
   component: DireccionesComponent
   },
+
+  {
+    path: 'security',
+    loadChildren: './security/security.module#SecurityModule' 
+  }, 
   {
     path: '**',
   component: PageNotFoundComponent
