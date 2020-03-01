@@ -4,6 +4,7 @@ import { GeneralModule } from './general/general.module';
 import { HomeComponent } from './general/home/home.component';
 import { DireccionesComponent } from './general/direcciones/direcciones.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
+import { ClientRoutingModule } from './client/client-routing.module';
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-  GeneralModule
+  GeneralModule,
+  ClientRoutingModule
 ],
   exports: [RouterModule]
 })
