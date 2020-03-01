@@ -16,6 +16,11 @@ const routes: Routes = [
   component: ClientCreatorComponent
   },
   {
+    path: 'client',
+    pathMatch: 'full',
+    redirectTo: 'client/list'
+  },
+  {
     path: 'client/editor',
   component: ClientEditorComponent
   }
