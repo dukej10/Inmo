@@ -5,6 +5,8 @@ import { HomeComponent } from './general/home/home.component';
 import { DireccionesComponent } from './general/direcciones/direcciones.component';
 import { PageNotFoundComponent } from './general/page-not-found/page-not-found.component';
 import { ClientRoutingModule } from './client/client-routing.module';
+import { ProductModule } from './product/product.module';
+import { ProductRoutingModule } from './product/product-routing.module';
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
     path: 'security',
     loadChildren: './security/security.module#SecurityModule' 
   }, 
+
   {
     path: '**',
   component: PageNotFoundComponent
@@ -41,7 +44,8 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes),
   GeneralModule,
-  ClientRoutingModule
+  ClientRoutingModule,
+  ProductRoutingModule
 ],
   exports: [RouterModule]
 })
