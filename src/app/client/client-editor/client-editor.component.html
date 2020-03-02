@@ -13,7 +13,7 @@
             <strong>Documento</strong>
         </td>
         <td>
-            <input type="text" [(ngModel)]="client.id" >
+            <input type="text" [(ngModel)]="client.doc" >
         </td>
     </tr>
     <tr>
@@ -32,8 +32,12 @@
             <input type="text" [(ngModel)]="client.email" > 
         </td>
     </tr>
+    <br>
+    <button class="btn waves-effect waves-light" type="button" (click)="updateClient()" name="action">Actualizar
+        <i class="material-icons right">edit</i>
+      </button>
 </table>
-    <br><br>
+    <br>
 <fieldset>
     <legend>
         Reporte
@@ -49,10 +53,10 @@
         </tr>
         <tr>
             <td>
-                <strong>Id</strong>
+                <strong>Documento</strong>
             </td>
             <td>
-                <label>{{client.id}}</label>
+                <label>{{client.doc}}</label>
             </td>
         </tr>
         <tr>
@@ -80,4 +84,16 @@
             </td>
         </tr>
     </table>
+    <br>
 </fieldset><br>
+
+<!-- Modal Structure -->
+<div id="updatedModal" class="modal">
+    <div class="modal-content">
+      <h4>Mensaje</h4>
+      <strong id="strUpdateMessage">
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>

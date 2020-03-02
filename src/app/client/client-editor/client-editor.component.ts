@@ -17,6 +17,7 @@ export class ClientEditorComponent implements OnInit {
 
   client = {
     id: null,
+    doc: null,
     name: null,
     age: null,
     email: null,
@@ -31,11 +32,23 @@ export class ClientEditorComponent implements OnInit {
   ngOnInit(){
     let id = this.getUrlParameter("clientId");
     let clientFound = this.clientService.searchClient(id);
-    this.client.id = clientFound._id;
+    this.client.doc = clientFound._id;
     this.client.name = clientFound.name;
     this.client.age = clientFound.age;
     this.client.email = clientFound.email;
     this.client.phone = clientFound.phone;
+    this.client.id = id;
+  }
+
+  updateClient(){
+    if (this.client.id != null){  /* si la cumple es que es válido (han buscado algo) */
+      let updated = this.clientService.updateClient(this.client);
+      if (updated){
+        alert('La información del cliente ha sido actualizada');
+      }else{
+        alert("No se actualizó la información del cliente");
+      }
+    }
   }
 
 }
