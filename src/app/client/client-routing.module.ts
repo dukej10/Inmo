@@ -21,7 +21,7 @@ const routes: Routes = [
     redirectTo: 'client/list'
   },
   {
-    path: 'client/editor',
+    path: 'client/editor/:clientId',
   component: ClientEditorComponent
   }
 ];
