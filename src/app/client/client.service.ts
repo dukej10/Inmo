@@ -13,6 +13,17 @@ export class ClientService {
      return this.data.find(c => c.index == clientId);   /* busca en c/registro donde c.index se igual al que esta llegando */
    }
 
+  updateClient(client){
+    let currentData = this.searchClient(client.index);
+    if (currentData!= undefined && currentData!= null){
+      currentData.name = client.name;
+      currentData._id = client.id;
+      currentData.age = client.age;
+      currentData.phone = client.phone;
+      currentData.email = client.email;
+
+    }
+  }
 
   getClientListData(){
     return this.data
