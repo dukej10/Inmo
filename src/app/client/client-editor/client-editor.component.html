@@ -1,1 +1,83 @@
-<p>client-editor works!</p>
+<div><h4 align="center">Edición de cliente</h4></div>
+<table>
+    <tr>
+        <td>
+            <strong>Nombre</strong>
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="client.name" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Documento</strong>
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="client.id" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Edad</strong>
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="client.age" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>Email</strong>
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="client.email" > 
+        </td>
+    </tr>
+</table>
+    <br><br>
+<fieldset>
+    <legend>
+        Reporte
+    </legend>
+    <table>
+        <tr>
+            <td>
+                <strong>Nombre</strong>
+            </td>
+            <td>
+                <label>{{client.name}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Id</strong>
+            </td>
+            <td>
+                <label>{{client.id}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Edad</strong>
+            </td>
+            <td>
+                <label>{{client.age}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Email</strong>
+            </td>
+            <td>
+                <label>{{client.email}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Teléfono</strong>
+            </td>
+            <td>
+                <label>{{client.phone}}</label>
+            </td>
+        </tr>
+    </table>
+</fieldset><br>
