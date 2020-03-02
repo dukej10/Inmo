@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { SecurityModule } from './security/security.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SecurityModule } from './security/security.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SecurityModule
+    SecurityModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
