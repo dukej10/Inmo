@@ -21,8 +21,9 @@ export class ClientService {
       currentData.age = client.age;
       currentData.phone = client.phone;
       currentData.email = client.email;
-
+      return true;
     }
+    return false;
   }
 
   getClientListData(){
