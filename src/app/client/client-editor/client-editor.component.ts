@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../client.service';
 
+declare const showUpdateMessage: any;
+
 @Component({
   selector: 'app-client-editor',
   templateUrl: './client-editor.component.html',
@@ -44,9 +46,9 @@ export class ClientEditorComponent implements OnInit {
     if (this.client.id != null){  /* si la cumple es que es válido (han buscado algo) */
       let updated = this.clientService.updateClient(this.client);
       if (updated){
-        alert('La información del cliente ha sido actualizada');
+        showUpdateMessage("La información ha sido actualizada");
       }else{
-        alert("No se actualizó la información del cliente");
+        showUpdateMessage("No se actualizó la información del cliente");
       }
     }
   }
