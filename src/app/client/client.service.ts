@@ -9,10 +9,12 @@ export class ClientService {
 
    }
   
+   /* Buscar cliente con el index enviado */
    searchClient(clientId){
      return this.data.find(c => c.index == clientId);   /* busca en c/registro donde c.index se igual al que esta llegando */
    }
 
+   /* Actualizar cliente */
   updateClient(client){
     let currentData = this.searchClient(client.index);
     if (currentData!= undefined && currentData!= null){
@@ -28,6 +30,7 @@ export class ClientService {
     }
     return false;
   }
+
 
   getClientListData(){
     return this.data
