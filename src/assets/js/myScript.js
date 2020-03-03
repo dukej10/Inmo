@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 function showUpdateMessage(message){
-    let eleme = document.querySelector("#updatedModal");
+    let elem = document.querySelector("#updatedMessageModal");
     let instance = M.Modal.getInstance(elem);
     document.querySelector("#strUpdateMessage").innerHTML = message;
     instance.open();

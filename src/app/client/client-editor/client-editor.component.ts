@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../client.service';
 
-declare const showUpdateMessage: any;
+declare const showUpdateMessage : any;
 
 @Component({
   selector: 'app-client-editor',
@@ -11,6 +11,7 @@ declare const showUpdateMessage: any;
 })
 export class ClientEditorComponent implements OnInit {
 
+  clientListData;
   id = null;
 
   getUrlParameter = (parameterName: string) => {
@@ -32,6 +33,15 @@ export class ClientEditorComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.loadClientToEdit();
+    this.loadClientListInfo();
+  }
+
+  loadClientListInfo(){    /* Actualiza la client list*/
+    this.clientListData = this.clientService.getClientListData();
+  }
+
+  loadClientToEdit(){
     let id = this.getUrlParameter("clientId");
     let clientFound = this.clientService.searchClient(id);
     this.client.doc = clientFound._id;
@@ -45,10 +55,10 @@ export class ClientEditorComponent implements OnInit {
   updateClient(){
     if (this.client.id != null){  /* si la cumple es que es válido (han buscado algo) */
       let updated = this.clientService.updateClient(this.client);
-      if (updated){
-        showUpdateMessage("La información ha sido actualizada");
+      if(updated){
+        alert("Ha sido actualizado");
       }else{
-        showUpdateMessage("No se actualizó la información del cliente");
+        alert("no ha sido actualizado");
       }
     }
   }
