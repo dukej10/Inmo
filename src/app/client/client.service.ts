@@ -16,12 +16,15 @@ export class ClientService {
   updateClient(client){
     let currentData = this.searchClient(client.index);
     if (currentData!= undefined && currentData!= null){
-      currentData.name = client.name;
-      currentData._id = client.id;
-      currentData.age = client.age;
-      currentData.phone = client.phone;
-      currentData.email = client.email;
-      return true;
+        alert("cambió");
+        currentData.name = client.name;
+        currentData._id = client.id;
+        currentData.age = client.age;
+        currentData.phone = client.phone;
+        currentData.email = client.email;
+        currentData.address = client.address;
+        //etc
+        return true;
     }
     return false;
   }
